@@ -25,17 +25,17 @@
     //单例模式虽然解决了我们的分组问题,但是属于传统的手工作业模式,编写的时候需要一个个的编写,浪费时间,而且页面中存在大量的重复的垃圾代码(冗余代码)
     //第二次工业革命:实现批量生产 ->"工厂模式"
     //工厂模式其实就是把需要一个个的编写的对象,放在一个函数中统一的进行创建,这样的话,在想创建一个前端开发攻城狮,我们不需要再一个个的编写了,只需要执行这个函数即可
-    //    function createJsPerson(name, age) {
-    //        var obj = {};
-    //        obj.name = name;
-    //        obj.age = age;
-    //        obj.writeJs = function () {
-    //            console.log("my name is " + this.name + ",my age is " + this.age + ",i can write js la~~~");
-    //        };
-    //        return obj;
-    //    }
-    //    var jsPerson1 = createJsPerson("王浩宇", 16);
-    //    jsPerson1.writeJs();
+    //        function createJsPerson(name, age) {
+    //            var obj = {};
+    //            obj.name = name;
+    //            obj.age = age;
+    //            obj.writeJs = function () {
+    //                console.log("my name is " + this.name + ",my age is " + this.age + ",i can write js la~~~");
+    //            };
+    //            return obj;
+    //        }
+    //        var jsPerson1 = createJsPerson("王浩宇", 16);
+    //        jsPerson1.writeJs();
     //
     //    var jsPerson2 = createJsPerson("张宏逸", 61);
     //    jsPerson2.writeJs();
@@ -73,14 +73,14 @@
     //    sum(100);//->no
 
     //但是如果非要强行说JS有重载:同一个方法,很据传递参数的不一样实现不一样的操作功能
-    //    function sum(num1, num2) {
-    //        //通过判断num2是否传递了值来进行不同的操作的处理
-    //        if (typeof num2 === "undefined") {
-    //            return "ok";
-    //        }
-    //        return "no";
-    //    }
-    //    sum(100);
+    function sum(num1, num2) {
+        //通过判断num2是否传递了值来进行不同的操作的处理
+        if (typeof num2 === "undefined") {
+            return "ok";
+        }
+        return "no";
+    }
+    //        sum(100);
     //    sum(100, 200);
 
     //重写:子类重写父类的方法,JS中是存在重写的
