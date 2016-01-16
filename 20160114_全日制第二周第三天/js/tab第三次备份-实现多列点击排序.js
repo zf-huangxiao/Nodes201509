@@ -54,7 +54,7 @@ function sortList(n) {
         var nexIn = b.cells[n].innerHTML;
         var curInNum = parseFloat(curIn);
         var nexInNum = parseFloat(nexIn);
-        //我们是给当前点击的这一列进行排序,对于数字的我们可以用相减来计算,对于非有效数字的,只能用localeCompare来进行比较
+        //我们是给当前点击的这一列进行排序,对于数字的我们可以用相减来计算,对于非有效数字的,只能用localeCompare来进行 比较
         if (isNaN(curInNum) || isNaN(nexInNum)) {
             return (curIn.localeCompare(nexIn)) * _this.flag;
         }

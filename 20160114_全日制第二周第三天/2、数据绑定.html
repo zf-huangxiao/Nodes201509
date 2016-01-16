@@ -27,6 +27,7 @@
             text-overflow: ellipsis; /*ellipsis:截取后以...作为省略 clip:没有省略号*/
             white-space: nowrap; /*强制不换行*/
             overflow: hidden; /*溢出隐藏*/
+            /*这三个要一起用*/
         }
 
         #ul1 li span {
@@ -78,28 +79,28 @@
 
     //"数据绑定":在给#ul1动态新增加数据,ary这个json数据中有几条我们就增加几条
     //1、动态创建li元素标签实现我们的数据绑定
-    //    for (i = 0; i < ary.length; i++) {
-    //        var curData = ary[i];
-    //        var oLi = document.createElement("li");
-    //        var num = (i + 4) < 10 ? "0" + (i + 4) : (i + 4);
-    //        oLi.innerHTML = "<span>" + num + "</span>" + curData["title"];
-    //        oUl.appendChild(oLi);
-    //    }
+//        for (i = 0; i < ary.length; i++) {
+//            var curData = ary[i];
+//            var oLi = document.createElement("li");
+//            var num = (i + 4) < 10 ? "0" + (i + 4) : (i + 4);
+//            oLi.innerHTML = "<span>" + num + "</span>" + curData["title"];
+//            oUl.appendChild(oLi);
+//        }
     //优势:我们每一次都是向容器的末尾追加新的元素,之前的元素没有受到任何的影响;
     //弊端:循环一次,增加一次,引发一次DOM回流,我们循环了7次,浏览器需要重新计算7次结构...
 
     //2、字符串拼接的方式实现数据绑定(是我们现有项目中最常用的一种方式)
-    //    var str = "";
-    //    for (i = 0; i < ary.length; i++) {
-    //        var curData = ary[i];
-    //        var n = (i + 4), num = n < 10 ? "0" + n : n;
-    //        str += "<li>";
-    //        str += "<span>" + num + "</span>" + curData["title"];
-    //        str += "</li>";
-    //    }
-    //    oUl.innerHTML += str;//->oUl.innerHTML = oUl.innerHTML + str; 首先把之前三个li获取到,然后在和我们最新的七个进行字符串拼接,最后把拼接完成的重新的放回到我们的页面中
-    //    changeBg();
-    //弊端:如果在绑定之前有元素,我们给其绑定了一些事件操作,当我们重新的增加数据后,原有的元素绑定的事件都消失了->每一次绑定的时候,都是先把之前的当做字符串拿出来,和最新的进行拼接,最后在重新的放回到页面中,由于放回去的是字符串,浏览器需要重新的进行渲染,这样导致了之前绑定的事件都消失了;
+//        var str = "";
+//        for (i = 0; i < ary.length; i++) {
+//            var curData = ary[i];
+//            var n = (i + 4), num = n < 10 ? "0" + n : n;
+//            str += "<li>";
+//            str += "<span>" + num + "</span>" + curData["title"];
+//            str += "</li>";
+//        }
+//        oUl.innerHTML += str;//->oUl.innerHTML = oUl.innerHTML + str; 首先把之前三个li获取到,然后在和我们最新的七个进行字符串拼接,最后把拼接完成的重新的放回到我们的页面中
+//        change.Bg();
+//    //弊端:如果在绑定之前有元素,我们给其绑定了一些事件操作,当我们重新的增加数据后,原有的元素绑定的事件都消失了->每一次绑定的时候,都是先把之前的当做字符串拿出来,和最新的进行拼接,最后在重新的放回到页面中,由于放回去的是字符串,浏览器需要重新的进行渲染,这样导致了之前绑定的事件都消失了;
     //优势:只最后统一添加了1次,引发一次回流...
 
     //3、使用文档碎片来处理数据绑定
