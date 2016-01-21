@@ -58,7 +58,7 @@
     var val = inner.innerHTML;//->首先获取inner中的内容
     window.setInterval(function () {
         var oldL = inner.scrollLeft;
-        inner.scrollLeft += 1;
+        inner.scrollLeft +=1;
         var newL = inner.scrollLeft;
         if (oldL === newL) {//加之前的值和加之后的值一模一样,说明加没起到作用,到头了->在把之前的内容向末尾增加一遍,这样就可以继续向后走了,从而实现我们的无缝衔接跑马灯
             inner.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;" + val;

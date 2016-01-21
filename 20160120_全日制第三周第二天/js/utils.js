@@ -40,7 +40,7 @@ utils.getCss = function (curEle, attr) {
 };
 
 //offset:Gets the offset of the current element distance body
-utils.offset = function (curEle) {
+utils.offset = function (curEle) {//距离ＢＯＤＹ的偏移量
     var t = curEle.offsetTop, l = curEle.offsetLeft, p = curEle.offsetParent;
     while (p) {
         if (navigator.userAgent.indexOf("MSIE 8.0") === -1) {
