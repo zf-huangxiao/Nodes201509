@@ -24,8 +24,7 @@
                 if (target <= 0) {
                     window.clearInterval(timer);
                     window.onscroll = scrollMove;
-                    return;
-                }
+                 }
                 target -= step;
                 document.documentElement.scrollTop = target;
                 document.body.scrollTop = target;
