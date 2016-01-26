@@ -193,7 +193,7 @@ utils.setGroupCss = function setGroupCss(curEle, options) {
     //->如果是的话,我们遍历每一项,在分别的调用setCss设置即可
     for (var key in options) {
         if (options.hasOwnProperty(key)) {
-            this.setCss(curEle, key, options[key]);
+            this.setCss(curEle, key, options[k.ey]);
         }
     }
 };
