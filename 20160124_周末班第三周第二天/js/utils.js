@@ -19,7 +19,7 @@ var utils = {
 
 //win:获取或者设置和浏览器相关的盒子模型信息
 utils.win = function win(attr, value) {
-    if (typeof value === "undefined") {
+    if (typeof value === "undefined") {　
         return document.documentElement[attr] || document.body[attr];
     }
     document.documentElement[attr] = value;
@@ -106,7 +106,7 @@ utils.nextAll = function nextAll(curEle) {
     return ary;
 };
 
-//sibling:获取当前元素的相邻节点(上一个哥哥+下一个弟弟)
+//sibling:获取当前元素的相邻元素节点(上一个哥哥+下一个弟弟)
 utils.sibling = function sibling(curEle) {
     var pre = this.prev(curEle), nex = this.next(curEle);
     var ary = [];
@@ -115,8 +115,8 @@ utils.sibling = function sibling(curEle) {
     return ary;
 };
 
-//sibling:获取当前元素的兄弟元素节点(哥哥+弟弟)
-utils.siblings = function sibling(curEle) {
+//siblings:获取当前元素的兄弟元素节点(哥哥+弟弟)
+utils.siblings = function siblings(curEle) {
     return this.prevAll(curEle).concat(this.nextAll(curEle));
 };
 

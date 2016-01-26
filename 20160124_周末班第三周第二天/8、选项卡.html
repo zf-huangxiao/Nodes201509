@@ -7,9 +7,9 @@
 </head>
 <body>
 <!--
-    1、不能只操作一个,需要操作多个(class='tab'),所有需要把所有具有这个样式的都获取到 getElementsByClassName(在IE6~8下不兼容)
+    1、不能只操作一个,需要操作多个(class='tab'),所以需要把所有具有这个样式的都获取到 getElementsByClassName(在IE6~8下不兼容)
 
-    2、在获取每一个tab下的三个li和三个div,但是使用getElementsByTagName获取的是子子孙孙级的-我们需要一个只获取子集元素的方法children
+    2、再获取每一个tab下的三个li和三个div,但是使用getElementsByTagName获取的是子子孙孙级的-我们需要一个只获取子集元素的方法children
 
     3、假设我已经得到想要的三个li,我们免费课:不管点击的是哪一个,先让所有的都没有选中的样式,然后在让当前点击的有...但是我们可以让当前点击的有,然后再让兄弟元素没有--获取兄弟元素siblings
 
