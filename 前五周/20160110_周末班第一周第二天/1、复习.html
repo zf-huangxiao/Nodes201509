@@ -21,9 +21,9 @@
         })()
     };
     var fn = obj.fn;
-    fn();
-    obj.fn();
-    console.log(window.num, obj.num);
+    fn();//9
+    obj.fn();//27
+    console.log(window.num, obj.num);//8 8
 </script>
 </body>
 </html>

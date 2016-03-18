@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="one">1111</div>
+<div id="two">
+    <li>12121</li>
+    222</div>
+<script type="text/javascript">
+  var oDiv1=document.getElementById("one");
+    var oDiv2=document.getElementById("two");
+    var oDiv3=oDiv2.cloneNode(false);
+    document.body.insertBefore(oDiv3,oDiv1);
+
+</script>
+</body>
+</html>

@@ -36,12 +36,12 @@
     //->实例创建:我们的元字符都是以字符串的方式传递进来的
 
     //1)对于转译字符\来说,在实例创建中只能代表一个\字符,所以遇到\我们都在给它前面加一个\即可
-    //    var reg = /^\d+$/;
-    //    console.log(reg.test("2016"));//->true
-    //
-    //    reg = new RegExp("^\d+$");
-    //    console.log(reg.test("2016"));//->false
-    //    console.log(reg.test("\ddddd"));//->true ->因为实例创建我们传递进来的是字符串,所以写的\d不是代表一个0-9的数字,而是一个字符\和一个字符d,+是让d出现一到多次
+//        var reg = /^\d+$/;
+//        console.log(reg.test("2016"));//->true
+//
+//        reg = new RegExp("^\d+$");
+//        console.log(reg.test("2016"));//->false
+//        console.log(reg.test("\ddddd"));//->true ->因为实例创建我们传递进来的是字符串,所以写的\d不是代表一个0-9的数字,而是一个字符\和一个字符d,+是让d出现一到多次
     //
     //    reg = new RegExp("^\\d+$");
     //    console.log(reg.test("2016"));//->true

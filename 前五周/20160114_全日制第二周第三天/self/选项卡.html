@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    　
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .tab{
+           width: 600px;
+            height: 400px;
+            margin: 50% auto;
+        }
+        .tab ul{
+            list-style: none;
+            position: relative;
+            top: 1px;
+        }
+        .tab ul li{
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #BBCCDD;
+            background: #bdd6e8;
+            float: left;
+            cursor: pointer;
+
+        }
+        .tab ul li.select{
+            background: green;
+        }
+        .tab div{
+            width: 600px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            border: 1px solid #BBCCDD;
+            display: none;
+            clear: both;
+        }
+        .tab div.select{
+            background: coral;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="tab" class="tab">
+    <ul class="check" id="check">
+        <li class="select">电影</li>
+        <li>电视剧</li>
+        <li>歌曲</li>
+    </ul>
+    <div class="select">美人鱼</div>
+    <div>生死线</div>
+    <div>冰雨</div>
+</div>
+
+
+<script type="text/javascript">
+    var oTab=document.getElementById("tab");
+    var oLis=oTab.getElementsByTagName("li");
+    var oDivs=oTab.getElementsByTagName("div");
+
+    function tabChange(curIndex){
+        for(var i=0;i<oLis.length;i++){
+            oLis[i].className=null;
+            oDivs[i].className=null;
+        }
+        oLis[curIndex].className="select";
+        oDivs[curIndex].className="select";
+    }
+//    for(var i=0;i<oLis.length;i++){
+//         oLis[i].index=i;
+//        oLis[i].onclick=function(){
+//            tabChange(this.index);
+//        }
+//
+//    }
+
+//    for(var i=0;i<oLis.length;i++){
+//        ~function(i){
+//            oLis[i].onclick=function(){
+//                tabChange(i);
+//            }
+//        }(i)
+//    }
+
+    for(var i=0;i<oLis.length;i++){
+        oLis[i].onclick=(function(i){
+            return function(){
+                tabChange(i)
+            }
+        })(i)
+
+    }
+</script>
+</body>
+</html>

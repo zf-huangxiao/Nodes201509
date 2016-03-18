@@ -9,21 +9,21 @@
     var ary = [12, 23, 34, 14, 35, 16];
 
     //2、利用obj存储(仅作参考)
-    //    var min = max = null;
-    //    var obj = {};
-    //    for (var i = 0; i < ary.length; i++) {
-    //        var cur = ary[i];
-    //        obj[cur] = cur;
-    //    }
-    //    var count = 0;
-    //    for (var key in obj) {
-    //        count++;
-    //        if (count === 1) {
-    //            min = key;
-    //        }
-    //    }//console.log(key);//->for in循环结束后,key此时存储的值就是最后一次循环的key的值
-    //    max = key;
-    //    console.log(min, max);
+        var min = max = null;
+        var obj = {};
+        for (var i = 0; i < ary.length; i++) {
+            var cur = ary[i];
+            obj[cur] = cur;
+        }
+        var count = 0;
+        for (var key in obj) {
+            count++;
+            if (count === 1) {
+                min = key;
+            }
+        }//console.log(key);//->for in循环结束后,key此时存储的值就是最后一次循环的key的值
+        max = key;
+        console.log(min, max);
 
 
     //1、先排序,然后掐头去尾
